@@ -1,7 +1,7 @@
 {
   "name": "@polyrithm/ngen",
   "description": "CLI Utility tool for AngularJS Development",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Nivrith",
   "bin": {
     "ngen": "./bin/run"
@@ -26,6 +26,7 @@
     "@types/node": "^10",
     "chai": "^4",
     "globby": "^8",
+    "gulp": "^3.9.1",
     "mocha": "^5",
     "nyc": "^13",
     "ts-node": "^7",
@@ -38,6 +39,7 @@
   "files": [
     "/bin",
     "/lib",
+    "/src/templates",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
@@ -61,7 +63,7 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "tslint -p test -t stylish",
-    "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+    "prepack": "rm -rf lib && tsc && gulp copy:templates && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
