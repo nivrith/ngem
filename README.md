@@ -20,7 +20,7 @@ $ npm install -g @polyrithm/ngen
 $ ngen COMMAND
 running command...
 $ ngen (-v|--version|version)
-@polyrithm/ngen/0.0.1 darwin-x64 node-v8.12.0
+@polyrithm/ngen/0.0.2 darwin-x64 node-v8.12.0
 $ ngen --help [COMMAND]
 USAGE
   $ ngen COMMAND
@@ -49,7 +49,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/generate/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.1/src/commands/generate/component.ts)_
+_See code: [src/commands/generate/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.2/src/commands/generate/component.ts)_
 
 ## `ngen generate:feature [FILE]`
 
@@ -65,7 +65,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/generate/feature.ts](https://github.com/Polyrithm/ngen/blob/v0.0.1/src/commands/generate/feature.ts)_
+_See code: [src/commands/generate/feature.ts](https://github.com/Polyrithm/ngen/blob/v0.0.2/src/commands/generate/feature.ts)_
 
 ## `ngen hello [FILE]`
 
@@ -85,7 +85,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/Polyrithm/ngen/blob/v0.0.1/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/Polyrithm/ngen/blob/v0.0.2/src/commands/hello.ts)_
 
 ## `ngen help [COMMAND]`
 
@@ -118,5 +118,5 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.1/src/commands/is-up.ts)_
+_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.2/src/commands/is-up.ts)_
 <!-- commandsstop -->

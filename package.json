@@ -1,7 +1,7 @@
 {
   "name": "@polyrithm/ngen",
   "description": "CLI Utility tool for AngularJS Development",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Nivrith",
   "bin": {
     "ngen": "./bin/run"
@@ -11,6 +11,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@types/chalk": "^2.2.0",
     "@types/handlebars": "^4.0.39",
     "chalk": "^2.4.1",
     "handlebars": "^4.0.12",
