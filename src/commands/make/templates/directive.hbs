@@ -1,0 +1,25 @@
+(function () {
+    'use strict';
+
+    angular
+        .module ('{{name}}')
+        .directive ('{{name}}directive', {{name}}directive);
+
+    {{name}}directive.$inject = ['$window'];
+
+    function {{name}}directive($window) {
+        // Usage:
+        //     <directive></directive>
+        // Creates:
+        //
+        var directive = {
+            link: link,
+            restrict: 'EA'
+        };
+        return directive;
+
+        function link(scope, element, attrs) {
+        }
+    }
+
+})();

@@ -20,7 +20,7 @@ $ npm install -g @polyrithm/ngen
 $ ngen COMMAND
 running command...
 $ ngen (-v|--version|version)
-@polyrithm/ngen/0.0.4 darwin-x64 node-v8.12.0
+@polyrithm/ngen/0.0.4 darwin-x64 node-v9.11.1
 $ ngen --help [COMMAND]
 USAGE
   $ ngen COMMAND
@@ -29,63 +29,31 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`ngen generate:component [NAME]`](#ngen-generatecomponent-name)
-* [`ngen generate:feature [FILE]`](#ngen-generatefeature-file)
-* [`ngen hello [FILE]`](#ngen-hello-file)
+* [`ngen generate:interceptor [NAME]`](#ngen-generateinterceptor-name)
 * [`ngen help [COMMAND]`](#ngen-help-command)
 * [`ngen is-up [FILE]`](#ngen-is-up-file)
+* [`ngen is:online [FILE]`](#ngen-isonline-file)
+* [`ngen make:component [NAME] [ARTIFACT]`](#ngen-makecomponent-name-artifact)
 
-## `ngen generate:component [NAME]`
-
-describe the command here
-
-```
-USAGE
-  $ ngen generate:component [NAME]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-```
-
-_See code: [src/commands/generate/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/generate/component.ts)_
-
-## `ngen generate:feature [FILE]`
+## `ngen generate:interceptor [NAME]`
 
 describe the command here
 
 ```
 USAGE
-  $ ngen generate:feature [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-```
-
-_See code: [src/commands/generate/feature.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/generate/feature.ts)_
-
-## `ngen hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ ngen hello [FILE]
+  $ ngen generate:interceptor [NAME]
 
 OPTIONS
   -f, --force
   -h, --help       show CLI help
   -n, --name=name  name to print
 
-EXAMPLE
-  $ ngen hello
-  hello world from ./src/hello.ts!
+ALIASES
+  $ ngen gi
+  $ ngen g:i
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/hello.ts)_
+_See code: [src/commands/generate/interceptor.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/generate/interceptor.ts)_
 
 ## `ngen help [COMMAND]`
 
@@ -102,7 +70,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.2/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.3/src/commands/help.ts)_
 
 ## `ngen is-up [FILE]`
 
@@ -119,4 +87,41 @@ OPTIONS
 ```
 
 _See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/is-up.ts)_
+
+## `ngen is:online [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ngen is:online [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/is/online.ts)_
+
+## `ngen make:component [NAME] [ARTIFACT]`
+
+Create an AngularJs Component
+
+```
+USAGE
+  $ ngen make:component [NAME] [ARTIFACT]
+
+OPTIONS
+  -f, --force
+  -h, --help           show CLI help
+  -m, --module=module  name of the module
+  -n, --name=name      name of the component
+
+ALIASES
+  $ ngen mc
+  $ ngen m:c
+```
+
+_See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/make/component.ts)_
 <!-- commandsstop -->

@@ -1,13 +1,9 @@
 import {Command, flags} from '@oclif/command'
+import chalk from 'chalk'
+import isOnline from 'is-online'
 
-export default class Hello extends Command {
+export default class IsOnline extends Command {
   static description = 'describe the command here'
-
-  static examples = [
-    `$ ngen hello
-hello world from ./src/hello.ts!
-`,
-  ]
 
   static flags = {
     help: flags.help({char: 'h'}),
@@ -20,10 +16,11 @@ hello world from ./src/hello.ts!
   static args = [{name: 'file'}]
 
   async run() {
-    const {args, flags} = this.parse(Hello)
+    const {args, flags} = this.parse(IsOnline)
 
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from ./src/commands/hello.ts`)
+    const online = await isOnline()
+    this.log(chalk.green(online))
+
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)
     }
