@@ -1,28 +1,20 @@
 import {Command, flags} from '@oclif/command'
 import chalk from 'chalk'
-import isOnline from 'is-online'
+
+//Js style import as is-online does't have a type def
+const isOnline = require('is-online')
 
 export default class IsOnline extends Command {
-  static description = 'describe the command here'
+  static description = 'Check if you are connected to the internet'
 
   static flags = {
-    help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    help: flags.help({char: 'h'})
   }
 
   static args = [{name: 'file'}]
 
   async run() {
-    const {args, flags} = this.parse(IsOnline)
-
     const online = await isOnline()
     this.log(chalk.green(online))
-
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
   }
 }

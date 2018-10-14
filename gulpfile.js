@@ -16,4 +16,6 @@ var
 gulp.task('copy:templates', function () {
   gulp.src('./src/commands/generate/templates/**')
       .pipe(gulp.dest('./lib/commands/generate/templates/'));
+  gulp.src('./src/commands/make/templates/**')
+  .pipe(gulp.dest('./lib/commands/make/templates/'));
 });

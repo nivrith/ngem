@@ -8,22 +8,18 @@ import {join as pathJoin} from 'path'
 import {cwd} from 'process'
 
 export default class GenerateInterceptor extends Command {
-  static description = 'describe the command here'
+  static description = 'Generate Angular Interceptor'
 
   static aliases = ['gi', 'g:i']
 
   static flags = {
-    help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    help: flags.help({char: 'h'})
   }
 
   static args = [{name: 'name'}]
 
   async run() {
-    const {args, flags} = this.parse(GenerateInterceptor)
+    const {args} = this.parse(GenerateInterceptor)
 
     this.log(
       chalk.red(
@@ -44,8 +40,5 @@ export default class GenerateInterceptor extends Command {
     writeFileSync(writePath, content, 'utf8')
     this.log(chalk.green('Interceptor Generated!'))
     this.log(chalk.green('CREATE '), writePath)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
   }
 }

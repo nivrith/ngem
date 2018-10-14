@@ -34,19 +34,18 @@ USAGE
 * [`ngen is-up [FILE]`](#ngen-is-up-file)
 * [`ngen is:online [FILE]`](#ngen-isonline-file)
 * [`ngen make:component [NAME] [ARTIFACT]`](#ngen-makecomponent-name-artifact)
+* [`ngen make:directive [FILE]`](#ngen-makedirective-file)
 
 ## `ngen generate:interceptor [NAME]`
 
-describe the command here
+Generate Angular Interceptor
 
 ```
 USAGE
   $ ngen generate:interceptor [NAME]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help  show CLI help
 
 ALIASES
   $ ngen gi
@@ -90,16 +89,14 @@ _See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4
 
 ## `ngen is:online [FILE]`
 
-describe the command here
+Check if you are connected to the internet
 
 ```
 USAGE
   $ ngen is:online [FILE]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help  show CLI help
 ```
 
 _See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/is/online.ts)_
@@ -124,4 +121,24 @@ ALIASES
 ```
 
 _See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/make/component.ts)_
+
+## `ngen make:directive [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ngen make:directive [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name of the directive
+
+ALIASES
+  $ ngen md
+  $ ngen m:d
+```
+
+_See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngen/blob/v0.0.4/src/commands/make/directive.ts)_
 <!-- commandsstop -->
