@@ -1,16 +1,37 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "node",
       "request": "launch",
-      "name": "Is Online",
+      "name": "is:online",
       "preLaunchTask": "typescript",
       "program": "${workspaceFolder}/bin/run",
       "protocol": "auto",
       "sourceMaps": true,
       "args": [
         "is:online"
+      ]
+    },
+
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "generate:interceptor",
+      "preLaunchTask": "typescript",
+      "program": "${workspaceFolder}/bin/run",
+      "protocol": "auto",
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "trace": true,
+      "console": "integratedTerminal",
+      "smartStep": true,
+      "sourceMaps": true,
+      "outputCapture": "console",
+      "args": [
+        "g:i",
+        "test"
       ]
     }
   ]
