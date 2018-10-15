@@ -9,6 +9,7 @@
     "target": "es2017",
     "composite": true,
     "baseUrl": "./src", // This must be specified if "paths" is.
+    "sourceMap": true
   },
   "include": [
     "src/**/*"
