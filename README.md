@@ -20,7 +20,7 @@ $ npm install -g @polyrithm/ngen
 $ ngen COMMAND
 running command...
 $ ngen (-v|--version|version)
-@polyrithm/ngen/0.0.10 darwin-x64 node-v9.11.1
+@polyrithm/ngen/0.0.10 darwin-x64 node-v8.12.0
 $ ngen --help [COMMAND]
 USAGE
   $ ngen COMMAND
@@ -29,12 +29,46 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`ngen bombard [FILE]`](#ngen-bombard-file)
+* [`ngen generate:component [NAME]`](#ngen-generatecomponent-name)
 * [`ngen generate:interceptor [NAME]`](#ngen-generateinterceptor-name)
 * [`ngen help [COMMAND]`](#ngen-help-command)
 * [`ngen is-up [FILE]`](#ngen-is-up-file)
 * [`ngen is:online [FILE]`](#ngen-isonline-file)
 * [`ngen make:component [NAME] [ARTIFACT]`](#ngen-makecomponent-name-artifact)
 * [`ngen make:directive [FILE]`](#ngen-makedirective-file)
+
+## `ngen bombard [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ngen bombard [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/bombard.ts](https://github.com/Polyrithm/ngen/blob/v0.0.10/src/commands/bombard.ts)_
+
+## `ngen generate:component [NAME]`
+
+describe the command here
+
+```
+USAGE
+  $ ngen generate:component [NAME]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/generate/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.10/src/commands/generate/component.ts)_
 
 ## `ngen generate:interceptor [NAME]`
 
