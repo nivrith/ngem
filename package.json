@@ -1,7 +1,7 @@
 {
   "name": "@polyrithm/ngen",
   "description": "CLI Utility tool for AngularJS Development",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "author": "Nivrith",
   "bin": {
     "ngen": "./bin/run"
