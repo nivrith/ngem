@@ -9,7 +9,7 @@ import {cwd} from 'process'
 export default class MakeFilter extends Command {
   static description = 'describe the command here'
 
-  static aliases = ['md', 'm:d']
+  static aliases = ['mf', 'm:f']
   static flags = {
     help: flags.help({char: 'h'}),
     // flag with a value (-n, --name=VALUE)
