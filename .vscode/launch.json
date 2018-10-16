@@ -9,7 +9,11 @@
       "preLaunchTask": "typescript",
       "program": "${workspaceFolder}/bin/run",
       "protocol": "auto",
+      "trace": true,
+      "console": "integratedTerminal",
+      "smartStep": true,
       "sourceMaps": true,
+      "outputCapture": "console",
       "args": [
         "is:online"
       ]

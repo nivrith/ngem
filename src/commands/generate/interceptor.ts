@@ -1,11 +1,12 @@
-import {Command, flags} from '@oclif/command'
+import {flags} from '@oclif/command'
 import * as Case from 'case'
 import chalk from 'chalk'
-import * as figlet from 'figlet'
 import {readFileSync, writeFileSync} from 'fs'
 import {compile} from 'handlebars'
 import {join as pathJoin} from 'path'
 import {cwd} from 'process'
+
+import Command from '../../base/command.base'
 
 export default class GenerateInterceptor extends Command {
   static description = 'Generate Angular Interceptor'
@@ -21,11 +22,6 @@ export default class GenerateInterceptor extends Command {
   async run() {
     const {args} = this.parse(GenerateInterceptor)
 
-    this.log(
-      chalk.red(
-        figlet.textSync('Ngen', {horizontalLayout: 'full'})
-      )
-    )
     const __DIRNAME = __dirname
     const CURR_DIR = cwd()
     this.log(chalk.blue('Interceptor Generating...'))
