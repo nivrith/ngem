@@ -7,11 +7,18 @@
       "request": "launch",
       "name": "is:online",
       "preLaunchTask": "typescript",
+      "runtimeVersion": "8.12.0",
       "program": "${workspaceFolder}/bin/run",
       "protocol": "auto",
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "trace": true,
+      "console": "integratedTerminal",
+      "smartStep": true,
       "sourceMaps": true,
+      "outputCapture": "console",
       "args": [
-        "is:online"
+        "is:online",
       ]
     },
 
@@ -20,6 +27,7 @@
       "request": "launch",
       "name": "generate:interceptor",
       "preLaunchTask": "typescript",
+      "runtimeVersion": "8.12.0",
       "program": "${workspaceFolder}/bin/run",
       "protocol": "auto",
       "cwd": "${workspaceRoot}",
