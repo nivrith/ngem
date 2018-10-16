@@ -20,7 +20,7 @@ $ npm install -g @polyrithm/ngen
 $ ngen COMMAND
 running command...
 $ ngen (-v|--version|version)
-@polyrithm/ngen/0.0.10 darwin-x64 node-v9.11.1
+@polyrithm/ngen/0.0.10 darwin-x64 node-v8.12.0
 $ ngen --help [COMMAND]
 USAGE
   $ ngen COMMAND
@@ -35,6 +35,7 @@ USAGE
 * [`ngen is:online [FILE]`](#ngen-isonline-file)
 * [`ngen make:component [NAME] [ARTIFACT]`](#ngen-makecomponent-name-artifact)
 * [`ngen make:directive [FILE]`](#ngen-makedirective-file)
+* [`ngen make:filter [FILE]`](#ngen-makefilter-file)
 
 ## `ngen generate:interceptor [NAME]`
 
@@ -110,7 +111,7 @@ USAGE
   $ ngen make:component [NAME] [ARTIFACT]
 
 OPTIONS
-  -f, --force
+  -f, --flat           create without subfolder
   -h, --help           show CLI help
   -m, --module=module  name of the module
   -n, --name=name      name of the component
@@ -141,4 +142,20 @@ ALIASES
 ```
 
 _See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngen/blob/v0.0.10/src/commands/make/directive.ts)_
+
+## `ngen make:filter [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ngen make:filter [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/make/filter.ts](https://github.com/Polyrithm/ngen/blob/v0.0.10/src/commands/make/filter.ts)_
 <!-- commandsstop -->

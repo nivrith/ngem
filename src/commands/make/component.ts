@@ -15,8 +15,8 @@ export default class MakeComponent extends Command {
     // flag with a value (-n, --name=VALUE)
     name: flags.string({char: 'n', description: 'name of the component'}),
     module: flags.string({char: 'm', description: 'name of the module'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    // flag with no value (-f, --flat)
+    flat: flags.boolean({char: 'f', description: 'create without subfolder'})
   }
 
   static args = [

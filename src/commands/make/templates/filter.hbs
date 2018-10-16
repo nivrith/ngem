@@ -2,17 +2,17 @@
     'use strict';
 
     angular
-        .module({{module}})
-        .filter('{{name}}', {{name}})
+    .module('{{module}}')
+    .filter('{{name}}', {{name}}Filter);
 
-    function {{name}}(){
-
-        return {{name}}Filter;
-
-        function {{name}}Filter(input){
+    /** @ngInject */
+    function {{name}}Filter () {
+        var filter = function(input){
 
             return input
         }
+
+        return filter;
     }
 
 }());
