@@ -1,7 +1,7 @@
 {
   "name": "@polyrithm/ngen",
-  "description": "CLI Utility tool for AngularJS Development",
-  "version": "0.0.12",
+  "description": "CLI Utility tool for Angular and AngularJS Development",
+  "version": "0.0.13",
   "author": "Nivrith",
   "bin": {
     "ngen": "./bin/run"
@@ -46,9 +46,9 @@
   "files": [
     "/bin",
     "/lib",
-    "/src/templates",
     "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "/oclif.manifest.json",
+    "yarn.lock"
   ],
   "homepage": "https://github.com/Polyrithm/ngen",
   "keywords": [
