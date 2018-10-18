@@ -20,7 +20,7 @@ $ npm install -g @polyrithm/ngen
 $ ngen COMMAND
 running command...
 $ ngen (-v|--version|version)
-@polyrithm/ngen/0.0.13 darwin-x64 node-v8.12.0
+@polyrithm/ngen/0.0.14 darwin-x64 node-v8.12.0
 $ ngen --help [COMMAND]
 USAGE
   $ ngen COMMAND
@@ -29,6 +29,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`ngen autocomplete [SHELL]`](#ngen-autocomplete-shell)
+* [`ngen commands`](#ngen-commands)
 * [`ngen generate:interceptor [NAME]`](#ngen-generateinterceptor-name)
 * [`ngen help [COMMAND]`](#ngen-help-command)
 * [`ngen is-up [FILE]`](#ngen-is-up-file)
@@ -36,6 +38,46 @@ USAGE
 * [`ngen make:component [NAME] [ARTIFACT]`](#ngen-makecomponent-name-artifact)
 * [`ngen make:directive [FILE]`](#ngen-makedirective-file)
 * [`ngen make:filter [NAME]`](#ngen-makefilter-name)
+* [`ngen update [CHANNEL]`](#ngen-update-channel)
+
+## `ngen autocomplete [SHELL]`
+
+display autocomplete installation instructions
+
+```
+USAGE
+  $ ngen autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL  shell type
+
+OPTIONS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+EXAMPLES
+  $ ngen autocomplete
+  $ ngen autocomplete bash
+  $ ngen autocomplete zsh
+  $ ngen autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
+
+## `ngen commands`
+
+list all the commands
+
+```
+USAGE
+  $ ngen commands
+
+OPTIONS
+  -h, --help  show CLI help
+  -j, --json  output in json format
+  --hidden    also show hidden commands
+```
+
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v1.2.2/src/commands/commands.ts)_
 
 ## `ngen generate:interceptor [NAME]`
 
@@ -53,7 +95,7 @@ ALIASES
   $ ngen g:i
 ```
 
-_See code: [src/commands/generate/interceptor.ts](https://github.com/Polyrithm/ngen/blob/v0.0.13/src/commands/generate/interceptor.ts)_
+_See code: [src/commands/generate/interceptor.ts](https://github.com/Polyrithm/ngen/blob/v0.0.14/src/commands/generate/interceptor.ts)_
 
 ## `ngen help [COMMAND]`
 
@@ -86,7 +128,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.13/src/commands/is-up.ts)_
+_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.14/src/commands/is-up.ts)_
 
 ## `ngen is:online [FILE]`
 
@@ -100,7 +142,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngen/blob/v0.0.13/src/commands/is/online.ts)_
+_See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngen/blob/v0.0.14/src/commands/is/online.ts)_
 
 ## `ngen make:component [NAME] [ARTIFACT]`
 
@@ -111,17 +153,18 @@ USAGE
   $ ngen make:component [NAME] [ARTIFACT]
 
 OPTIONS
-  -f, --flat           create without subfolder
+  -f, --flat           create component without subfolder
   -h, --help           show CLI help
   -m, --module=module  name of the module
   -n, --name=name      name of the component
+  -o, --open           Open the generated file
 
 ALIASES
   $ ngen mc
   $ ngen m:c
 ```
 
-_See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.13/src/commands/make/component.ts)_
+_See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.14/src/commands/make/component.ts)_
 
 ## `ngen make:directive [FILE]`
 
@@ -141,7 +184,7 @@ ALIASES
   $ ngen m:d
 ```
 
-_See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngen/blob/v0.0.13/src/commands/make/directive.ts)_
+_See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngen/blob/v0.0.14/src/commands/make/directive.ts)_
 
 ## `ngen make:filter [NAME]`
 
@@ -158,9 +201,20 @@ OPTIONS
   -n, --name=name      name of the filter
 
 ALIASES
-  $ ngen md
-  $ ngen m:d
+  $ ngen mf
+  $ ngen m:f
 ```
 
-_See code: [src/commands/make/filter.ts](https://github.com/Polyrithm/ngen/blob/v0.0.13/src/commands/make/filter.ts)_
+_See code: [src/commands/make/filter.ts](https://github.com/Polyrithm/ngen/blob/v0.0.14/src/commands/make/filter.ts)_
+
+## `ngen update [CHANNEL]`
+
+update the ngen CLI
+
+```
+USAGE
+  $ ngen update [CHANNEL]
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.4/src/commands/update.ts)_
 <!-- commandsstop -->
