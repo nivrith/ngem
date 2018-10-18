@@ -35,6 +35,7 @@ export default class MakeComponent extends Command {
         figlet.textSync('Ngen', {horizontalLayout: 'full'})
       )
     )
+
     const __DIRNAME = __dirname
     const CURR_DIR = cwd()
     this.log(chalk.blue('Component Generating...'))
@@ -64,12 +65,13 @@ export default class MakeComponent extends Command {
     writeFileSync(writePath, content, 'utf8')
     this.log(chalk.green('Component Generated!'))
     notifier.notify({
-      title: 'Ngen: Component Generated',
-      message: 'CREATE: ' + writePath
+      title: 'Component Generated',
+      message: 'CREATE: ' + writePath,
+      icon: pathJoin(__DIRNAME, '../../img/cli.png')
     })
 
     if (flags.open) {
-      open(writePath,{wait: false}).then(() =>
+      open(writePath, {wait: false}).then(() =>
         this.log('then')
       ).catch(e => this.log('catch', e))
     }
