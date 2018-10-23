@@ -20,7 +20,7 @@ $ npm install -g @polyrithm/ngen
 $ ngen COMMAND
 running command...
 $ ngen (-v|--version|version)
-@polyrithm/ngen/0.0.18 darwin-x64 node-v8.12.0
+@polyrithm/ngen/0.0.19 darwin-x64 node-v8.12.0
 $ ngen --help [COMMAND]
 USAGE
   $ ngen COMMAND
@@ -95,7 +95,7 @@ ALIASES
   $ ngen g:i
 ```
 
-_See code: [src/commands/generate/interceptor.ts](https://github.com/Polyrithm/ngen/blob/v0.0.18/src/commands/generate/interceptor.ts)_
+_See code: [src/commands/generate/interceptor.ts](https://github.com/Polyrithm/ngen/blob/v0.0.19/src/commands/generate/interceptor.ts)_
 
 ## `ngen help [COMMAND]`
 
@@ -128,7 +128,7 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.18/src/commands/is-up.ts)_
+_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.19/src/commands/is-up.ts)_
 
 ## `ngen is:online [FILE]`
 
@@ -142,7 +142,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngen/blob/v0.0.18/src/commands/is/online.ts)_
+_See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngen/blob/v0.0.19/src/commands/is/online.ts)_
 
 ## `ngen make:component [NAME] [ARTIFACT]`
 
@@ -164,7 +164,7 @@ ALIASES
   $ ngen m:c
 ```
 
-_See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.18/src/commands/make/component.ts)_
+_See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.19/src/commands/make/component.ts)_
 
 ## `ngen make:directive [FILE]`
 
@@ -184,7 +184,7 @@ ALIASES
   $ ngen m:d
 ```
 
-_See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngen/blob/v0.0.18/src/commands/make/directive.ts)_
+_See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngen/blob/v0.0.19/src/commands/make/directive.ts)_
 
 ## `ngen make:filter [NAME]`
 
@@ -205,7 +205,7 @@ ALIASES
   $ ngen m:f
 ```
 
-_See code: [src/commands/make/filter.ts](https://github.com/Polyrithm/ngen/blob/v0.0.18/src/commands/make/filter.ts)_
+_See code: [src/commands/make/filter.ts](https://github.com/Polyrithm/ngen/blob/v0.0.19/src/commands/make/filter.ts)_
 
 ## `ngen update [CHANNEL]`
 
