@@ -4,18 +4,18 @@
 
   var {{name}}Component = {
     bindings: {},
-    controller: {{name}}Controller,
+    controller: {{pascalName}}Controller,
     controllerAs: 'vm',
     templateUrl: '',
   };
 
 
   angular.module ('{{module}}')
-  .component ('{{name}}', {{name}}Component);
+  .component ('{{name}}', {{pascalName}}Component);
 
 
   /** @ngInject */
-  function {{name}}Controller(){
+  function {{pascalName}}Controller(){
     var vm = this;
 
     return vm;

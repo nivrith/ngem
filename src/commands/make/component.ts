@@ -43,6 +43,7 @@ export default class MakeComponent extends Command {
     const template = compile(source)
     const content = template({
       name: Case.camel(args.name),
+      pascalName: Case.pascal(args.name),
       module: flags.module || 'module'
     })
 
@@ -59,7 +60,7 @@ export default class MakeComponent extends Command {
         // this.error(err, {code: '1', exit: 1})
       }
     } else {
-      writePath = `${CURR_DIR}/${args.name}.component.js`
+      writePath = `${CURR_DIR}/${Case.snake(args.name)}.component.js`
     }
 
     writeFileSync(writePath, content, 'utf8')
