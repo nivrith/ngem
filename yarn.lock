@@ -2789,10 +2789,10 @@ node-notifier@^5.2.1:
     shellwords "^0.1.1"
     which "^1.3.0"
 
-node@^10.12.0:
-  version "10.12.0"
-  resolved "https://registry.yarnpkg.com/node/-/node-10.12.0.tgz#72dbd553b9fc7550a66e774b89c71c34435e2e08"
-  integrity sha512-PJy1yLeYS9bYoYora/9jIQSUBCkw1XCS3AfMIYCJJVKq2xyLmDLyHv1rYDwNxXdkjoJusPQoW65H1gvrxQNq+Q==
+node@8.12.0:
+  version "8.12.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-8.12.0.tgz#b62e72b3a77e89c29d3c8c21be07b4de5d6414d2"
+  integrity sha512-00OdiTAlqQ8mvxXg8D//OSD/bDBI3eBGvArBbJ2RB6ExyzpgoLxQzajhcj9FeKVmrzFYeUHjzCl7hzL9vPMpXw==
   dependencies:
     node-bin-setup "^1.0.0"
 
