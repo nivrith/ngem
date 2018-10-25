@@ -4,6 +4,8 @@ import chalk from 'chalk'
 import * as figlet from 'figlet'
 import {mkdirSync, readFileSync, writeFileSync} from 'fs'
 import {compile} from 'handlebars'
+import * as notifier from 'node-notifier'
+import open = require('opn')
 import {join as pathJoin} from 'path'
 import {cwd} from 'process'
 export default class MakeComponent extends Command {
@@ -15,8 +17,9 @@ export default class MakeComponent extends Command {
     // flag with a value (-n, --name=VALUE)
     name: flags.string({char: 'n', description: 'name of the component'}),
     module: flags.string({char: 'm', description: 'name of the module'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    // flag with no value (-f, --flat)
+    flat: flags.boolean({char: 'f', description: 'create component without subfolder'}),
+    open: flags.boolean({char: 'o', description: 'Open the generated file'})
   }
 
   static args = [
@@ -32,6 +35,7 @@ export default class MakeComponent extends Command {
         figlet.textSync('Ngen', {horizontalLayout: 'full'})
       )
     )
+
     const __DIRNAME = __dirname
     const CURR_DIR = cwd()
     this.log(chalk.blue('Component Generating...'))
@@ -39,23 +43,38 @@ export default class MakeComponent extends Command {
     const template = compile(source)
     const content = template({
       name: Case.camel(args.name),
+      pascalName: Case.pascal(args.name),
       module: flags.module || 'module'
     })
 
+    let writePath: string
     // const name = flags.name || 'world'
-    const writePath = `${CURR_DIR}/${args.name}/${args.name}.component.js`
-    try {
-      mkdirSync(`${CURR_DIR}/${args.name}`)
-    } catch (err) {
-      if (err && err.code === 'EEXIST') {
-        this.warn('Directory exists')
+    if (!flags.flat) {
+      writePath = `${CURR_DIR}/${args.name}/${args.name}.component.js`
+      try {
+        mkdirSync(`${CURR_DIR}/${args.name}`)
+      } catch (err) {
+        if (err && err.code === 'EEXIST') {
+          this.warn('Directory exists')
+        }
+        // this.error(err, {code: '1', exit: 1})
       }
-      // this.error(err, {code: '1', exit: 1})
+    } else {
+      writePath = `${CURR_DIR}/${Case.snake(args.name)}.component.js`
     }
+
     writeFileSync(writePath, content, 'utf8')
     this.log(chalk.green('Component Generated!'))
-    // if (args.file && flags.force) {
-    //   this.log(`you input --force and --file: ${args.file}`)
-    // }
+    notifier.notify({
+      title: 'Component Generated',
+      message: 'CREATE: ' + writePath,
+      icon: pathJoin(__DIRNAME, '../../img/cli.png')
+    })
+
+    if (flags.open) {
+      open(writePath, {wait: false}).then(() =>
+        this.log('then')
+      ).catch(e => this.log('catch', e))
+    }
   }
 }
