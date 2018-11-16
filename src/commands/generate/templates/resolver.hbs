@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { {{pascalName}}Service } from '@app/core/services/{{kebabName}}.service';
+import { {{pascalName}} } from '@app/core/models/{{kebabName}}.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class {{pascalName}}Resolver implements Resolve<{{pascalName}}>  {
+
+  constructor(
+    private {{pascalName}}Service: {{pascalName}}Service,
+  ) { }
+
+  resolve(
+    route: ActivatedRouteSnapshot,
+    ): Observable<{{pascalName}}> {
+    {{#if all}}
+      return this.{{pascalName}}Service.getAll{{pascalName}}();
+    {{else}}
+      const {{camelName}}Id = route.paramMap.get('id');
+      return this.{{pascalName}}Service.get{{pascalName}}({{camelName}}Id);
+    {{/if}}
+    
+  }
+}
+
