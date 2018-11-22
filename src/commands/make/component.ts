@@ -32,7 +32,7 @@ export default class MakeComponent extends Command {
 
     this.log(
       chalk.red(
-        figlet.textSync('Ngen', {horizontalLayout: 'full'})
+        figlet.textSync('Ngem', {horizontalLayout: 'full'})
       )
     )
 

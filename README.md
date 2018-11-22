@@ -1,13 +1,13 @@
-ngen
+ngem
 ====
 
 CLI Utility tool for Angular Development
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/ngen.svg)](https://npmjs.org/package/ngen)
-[![CircleCI](https://circleci.com/gh/Polyrithm/ngen/tree/master.svg?style=shield)](https://circleci.com/gh/Polyrithm/ngen/tree/master)
-[![Downloads/week](https://img.shields.io/npm/dw/ngen.svg)](https://npmjs.org/package/ngen)
-[![License](https://img.shields.io/npm/l/ngen.svg)](https://github.com/Polyrithm/ngen/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/ngem.svg)](https://npmjs.org/package/ngem)
+[![CircleCI](https://circleci.com/gh/Polyrithm/ngem/tree/master.svg?style=shield)](https://circleci.com/gh/Polyrithm/ngem/tree/master)
+[![Downloads/week](https://img.shields.io/npm/dw/ngem.svg)](https://npmjs.org/package/ngem)
+[![License](https://img.shields.io/npm/l/ngem.svg)](https://github.com/Polyrithm/ngem/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
@@ -16,40 +16,40 @@ CLI Utility tool for Angular Development
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @polyrithm/ngen
-$ ngen COMMAND
+$ npm install -g @polyrithm/ngem
+$ ngem COMMAND
 running command...
-$ ngen (-v|--version|version)
-@polyrithm/ngen/0.0.23 darwin-x64 node-v10.13.0
-$ ngen --help [COMMAND]
+$ ngem (-v|--version|version)
+@polyrithm/ngem/0.0.23 darwin-x64 node-v10.13.0
+$ ngem --help [COMMAND]
 USAGE
-  $ ngen COMMAND
+  $ ngem COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`ngen bombard [FILE]`](#ngen-bombard-file)
-* [`ngen generate:component [NAME]`](#ngen-generatecomponent-name)
-* [`ngen autocomplete [SHELL]`](#ngen-autocomplete-shell)
-* [`ngen commands`](#ngen-commands)
-* [`ngen generate:interceptor [NAME]`](#ngen-generateinterceptor-name)
-* [`ngen generate:resolver [NAME]`](#ngen-generateresolver-name)
-* [`ngen help [COMMAND]`](#ngen-help-command)
-* [`ngen is-up [FILE]`](#ngen-is-up-file)
-* [`ngen is:online [FILE]`](#ngen-isonline-file)
-* [`ngen make:component [NAME] [ARTIFACT]`](#ngen-makecomponent-name-artifact)
-* [`ngen make:directive [FILE]`](#ngen-makedirective-file)
-* [`ngen make:filter [NAME]`](#ngen-makefilter-name)
-* [`ngen update [CHANNEL]`](#ngen-update-channel)
+* [`ngem bombard [FILE]`](#ngem-bombard-file)
+* [`ngem generate:component [NAME]`](#ngem-generatecomponent-name)
+* [`ngem autocomplete [SHELL]`](#ngem-autocomplete-shell)
+* [`ngem commands`](#ngem-commands)
+* [`ngem generate:interceptor [NAME]`](#ngem-generateinterceptor-name)
+* [`ngem generate:resolver [NAME]`](#ngem-generateresolver-name)
+* [`ngem help [COMMAND]`](#ngem-help-command)
+* [`ngem is-up [FILE]`](#ngem-is-up-file)
+* [`ngem is:online [FILE]`](#ngem-isonline-file)
+* [`ngem make:component [NAME] [ARTIFACT]`](#ngem-makecomponent-name-artifact)
+* [`ngem make:directive [FILE]`](#ngem-makedirective-file)
+* [`ngem make:filter [NAME]`](#ngem-makefilter-name)
+* [`ngem update [CHANNEL]`](#ngem-update-channel)
 
-## `ngen autocomplete [SHELL]`
+## `ngem autocomplete [SHELL]`
 
 display autocomplete installation instructions
 
 ```
 USAGE
-  $ ngen autocomplete [SHELL]
+  $ ngem autocomplete [SHELL]
 
 ARGUMENTS
   SHELL  shell type
@@ -58,21 +58,21 @@ OPTIONS
   -r, --refresh-cache  Refresh cache (ignores displaying instructions)
 
 EXAMPLES
-  $ ngen autocomplete
-  $ ngen autocomplete bash
-  $ ngen autocomplete zsh
-  $ ngen autocomplete --refresh-cache
+  $ ngem autocomplete
+  $ ngem autocomplete bash
+  $ ngem autocomplete zsh
+  $ ngem autocomplete --refresh-cache
 ```
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
 
-## `ngen commands`
+## `ngem commands`
 
 list all the commands
 
 ```
 USAGE
-  $ ngen commands
+  $ ngem commands
 
 OPTIONS
   -h, --help  show CLI help
@@ -82,13 +82,13 @@ OPTIONS
 
 _See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v1.2.2/src/commands/commands.ts)_
 
-## `ngen bombard [FILE]`
+## `ngem bombard [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ ngen bombard [FILE]
+  $ ngem bombard [FILE]
 
 OPTIONS
   -f, --force
@@ -96,15 +96,15 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/bombard.ts](https://github.com/Polyrithm/ngen/blob/v0.0.10/src/commands/bombard.ts)_
+_See code: [src/commands/bombard.ts](https://github.com/Polyrithm/ngem/blob/v0.0.10/src/commands/bombard.ts)_
 
-## `ngen generate:component [NAME]`
+## `ngem generate:component [NAME]`
 
 describe the command here
 
 ```
 USAGE
-  $ ngen generate:component [NAME]
+  $ ngem generate:component [NAME]
 
 OPTIONS
   -f, --force
@@ -112,52 +112,52 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/generate/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.10/src/commands/generate/component.ts)_
+_See code: [src/commands/generate/component.ts](https://github.com/Polyrithm/ngem/blob/v0.0.10/src/commands/generate/component.ts)_
 
-## `ngen generate:interceptor [NAME]`
+## `ngem generate:interceptor [NAME]`
 
 Generate Angular Interceptor
 
 ```
 USAGE
-  $ ngen generate:interceptor [NAME]
+  $ ngem generate:interceptor [NAME]
 
 OPTIONS
   -h, --help  show CLI help
 
 ALIASES
-  $ ngen gi
-  $ ngen g:i
+  $ ngem gi
+  $ ngem g:i
 ```
 
-_See code: [src/commands/generate/interceptor.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/generate/interceptor.ts)_
+_See code: [src/commands/generate/interceptor.ts](https://github.com/Polyrithm/ngem/blob/v0.0.23/src/commands/generate/interceptor.ts)_
 
-## `ngen generate:resolver [NAME]`
+## `ngem generate:resolver [NAME]`
 
 Generate Angular Resolver
 
 ```
 USAGE
-  $ ngen generate:resolver [NAME]
+  $ ngem generate:resolver [NAME]
 
 OPTIONS
   -a, --all
   -h, --help  show CLI help
 
 ALIASES
-  $ ngen gr
-  $ ngen g:r
+  $ ngem gr
+  $ ngem g:r
 ```
 
-_See code: [src/commands/generate/resolver.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/generate/resolver.ts)_
+_See code: [src/commands/generate/resolver.ts](https://github.com/Polyrithm/ngem/blob/v0.0.23/src/commands/generate/resolver.ts)_
 
-## `ngen help [COMMAND]`
+## `ngem help [COMMAND]`
 
-display help for ngen
+display help for ngem
 
 ```
 USAGE
-  $ ngen help [COMMAND]
+  $ ngem help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -168,13 +168,13 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.3/src/commands/help.ts)_
 
-## `ngen is-up [FILE]`
+## `ngem is-up [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ ngen is-up [FILE]
+  $ ngem is-up [FILE]
 
 OPTIONS
   -f, --force
@@ -182,29 +182,29 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/is-up.ts)_
+_See code: [src/commands/is-up.ts](https://github.com/Polyrithm/ngem/blob/v0.0.23/src/commands/is-up.ts)_
 
-## `ngen is:online [FILE]`
+## `ngem is:online [FILE]`
 
 Check if you are connected to the internet
 
 ```
 USAGE
-  $ ngen is:online [FILE]
+  $ ngem is:online [FILE]
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/is/online.ts)_
+_See code: [src/commands/is/online.ts](https://github.com/Polyrithm/ngem/blob/v0.0.23/src/commands/is/online.ts)_
 
-## `ngen make:component [NAME] [ARTIFACT]`
+## `ngem make:component [NAME] [ARTIFACT]`
 
 Create an AngularJs Component
 
 ```
 USAGE
-  $ ngen make:component [NAME] [ARTIFACT]
+  $ ngem make:component [NAME] [ARTIFACT]
 
 OPTIONS
   -f, --flat           create component without subfolder
@@ -214,19 +214,19 @@ OPTIONS
   -o, --open           Open the generated file
 
 ALIASES
-  $ ngen mc
-  $ ngen m:c
+  $ ngem mc
+  $ ngem m:c
 ```
 
-_See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/make/component.ts)_
+_See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngem/blob/v0.0.23/src/commands/make/component.ts)_
 
-## `ngen make:directive [FILE]`
+## `ngem make:directive [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ ngen make:directive [FILE]
+  $ ngem make:directive [FILE]
 
 OPTIONS
   -f, --force
@@ -234,19 +234,19 @@ OPTIONS
   -n, --name=name  name of the directive
 
 ALIASES
-  $ ngen md
-  $ ngen m:d
+  $ ngem md
+  $ ngem m:d
 ```
 
-_See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/make/directive.ts)_
+_See code: [src/commands/make/directive.ts](https://github.com/Polyrithm/ngem/blob/v0.0.23/src/commands/make/directive.ts)_
 
-## `ngen make:filter [NAME]`
+## `ngem make:filter [NAME]`
 
 describe the command here
 
 ```
 USAGE
-  $ ngen make:filter [NAME]
+  $ ngem make:filter [NAME]
 
 OPTIONS
   -f, --force
@@ -255,19 +255,19 @@ OPTIONS
   -n, --name=name      name of the filter
 
 ALIASES
-  $ ngen mf
-  $ ngen m:f
+  $ ngem mf
+  $ ngem m:f
 ```
 
-_See code: [src/commands/make/filter.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/make/filter.ts)_
+_See code: [src/commands/make/filter.ts](https://github.com/Polyrithm/ngem/blob/v0.0.23/src/commands/make/filter.ts)_
 
-## `ngen update [CHANNEL]`
+## `ngem update [CHANNEL]`
 
-update the ngen CLI
+update the ngem CLI
 
 ```
 USAGE
-  $ ngen update [CHANNEL]
+  $ ngem update [CHANNEL]
 ```
 
 _See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.4/src/commands/update.ts)_

@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Use a ngen.json file to set custom templates directory
+- Use a ngem.json file to set custom templates directory
 
 ### Changed
 

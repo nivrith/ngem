@@ -1,4 +1,4 @@
-export interface NgenConfig {
+export interface NgemConfig {
   prefix: string,
   templates: string
 }

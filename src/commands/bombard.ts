@@ -17,7 +17,7 @@ export default class Bombard extends Command {
     const {args, flags} = this.parse(Bombard)
 
     const name = flags.name || 'world'
-    this.log(`hello ${name} from /Users/nivrith/Desktop/polyrithm/ngen/src/commands/bombard.ts`)
+    this.log(`hello ${name} from /Users/nivrith/Desktop/polyrithm/ngem/src/commands/bombard.ts`)
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)
     }
