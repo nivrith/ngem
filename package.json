@@ -1,7 +1,7 @@
 {
   "name": "@polyrithm/ngen",
   "description": "CLI Utility tool for Angular and AngularJS Development",
-  "version": "0.0.20",
+  "version": "0.0.23",
   "author": "Nivrith",
   "bin": {
     "ngen": "./bin/run"
@@ -33,6 +33,8 @@
     "node-notifier": "^5.2.1",
     "opn": "^5.4.0",
     "simple-git": "^1.105.0",
+    "socialy": "^0.0.9",
+    "ts-simple-ast": "^17.1.0",
     "tslib": "^1"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import {flags} from '@oclif/command'
 import chalk from 'chalk'
-
 //Js style import as is-online does't have a type def
+// import {Project} from 'ts-simple-ast'
 const isOnline = require('is-online')
 import Command from '../../base/command.base'
 
