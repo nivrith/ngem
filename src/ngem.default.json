@@ -1,0 +1,12 @@
+{
+  "prefix": "app",
+  "openOnCreate": true,
+  "defaultModule": "app",
+  "flat": false,
+  "angularjs": {
+    "templatesDir": "commmands/make/templates"
+  },
+  "angular": {
+    "templatesDir": "commmands/generate/templates"
+  }
+}

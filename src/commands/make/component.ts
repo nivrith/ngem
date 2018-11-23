@@ -1,13 +1,10 @@
-import {Command, flags} from '@oclif/command'
-import * as Case from 'case'
-import chalk from 'chalk'
-import * as figlet from 'figlet'
-import {mkdirSync, readFileSync, writeFileSync} from 'fs'
-import {compile} from 'handlebars'
-import * as notifier from 'node-notifier'
-import open = require('opn')
-import {join as pathJoin} from 'path'
-import {cwd} from 'process'
+import {flags} from '@oclif/command'
+
+import Command from '../../base/maker.base'
+import {FileType} from '../../enums/file-type.enum'
+import {MakeType} from '../../enums/make-type.enum'
+
+import {WriteFileConfig} from './../../models/write-file-config.model'
 export default class MakeComponent extends Command {
   static description = 'Create an AngularJs Component'
 
@@ -24,57 +21,21 @@ export default class MakeComponent extends Command {
 
   static args = [
     {name: 'name'},
-    {name: 'artifact'}
   ]
 
   async run() {
     const {args, flags} = this.parse(MakeComponent)
 
-    this.log(
-      chalk.red(
-        figlet.textSync('Ngem', {horizontalLayout: 'full'})
-      )
-    )
-
-    const __DIRNAME = __dirname
-    const CURR_DIR = cwd()
-    this.log(chalk.blue('Component Generating...'))
-    const source = readFileSync(pathJoin(__DIRNAME, 'templates/component.hbs'), 'utf8').toString()
-    const template = compile(source)
-    const content = template({
-      name: Case.camel(args.name),
-      pascalName: Case.pascal(args.name),
-      module: flags.module || 'module'
-    })
-
-    let writePath: string
-    // const name = flags.name || 'world'
-    if (!flags.flat) {
-      writePath = `${CURR_DIR}/${args.name}/${args.name}.component.js`
-      try {
-        mkdirSync(`${CURR_DIR}/${args.name}`)
-      } catch (err) {
-        if (err && err.code === 'EEXIST') {
-          this.warn('Directory exists')
-        }
-        // this.error(err, {code: '1', exit: 1})
-      }
-    } else {
-      writePath = `${CURR_DIR}/${Case.snake(args.name)}.component.js`
+    this.logInfo(`${MakeType.Component} Generating...`)
+    const template = await this.getTemplate(MakeType.Component)
+    const content = await this.makeContent(template, args, flags)
+    const writeFileConfig: WriteFileConfig = {
+      content,
+      fileType: FileType.JavaScript,
+      args,
+      flags,
+      templateType: MakeType.Component
     }
-
-    writeFileSync(writePath, content, 'utf8')
-    this.log(chalk.green('Component Generated!'))
-    notifier.notify({
-      title: 'Component Generated',
-      message: 'CREATE: ' + writePath,
-      icon: pathJoin(__DIRNAME, '../../img/cli.png')
-    })
-
-    if (flags.open) {
-      open(writePath, {wait: false}).then(() =>
-        this.log('then')
-      ).catch(e => this.log('catch', e))
-    }
+    await this.writeFile(writeFileConfig)
   }
 }

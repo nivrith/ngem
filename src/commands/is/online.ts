@@ -3,7 +3,7 @@ import chalk from 'chalk'
 //Js style import as is-online does't have a type def
 // import {Project} from 'ts-simple-ast'
 const isOnline = require('is-online')
-import Command from '../../base/command.base'
+import Command from '../../base/maker.base'
 
 export default class IsOnline extends Command {
   static description = 'Check if you are connected to the internet'
@@ -17,10 +17,6 @@ export default class IsOnline extends Command {
   async run() {
     const online = await isOnline()
     this.log(chalk.green(online))
-    const root = await Command.findRoot().catch(() => null)
-    this.log(String(root))
-    const config = await Command.getConfig()
-    .catch(() => null)
-    this.log(String(config))
+    this.log(JSON.stringify(Command.ngemConfig))
   }
 }

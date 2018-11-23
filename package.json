@@ -25,6 +25,7 @@
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
+    "copyfiles": "^2.1.0",
     "figlet": "^1.2.1",
     "find-root": "^1.1.0",
     "fs-extra": "^7.0.0",
@@ -33,7 +34,6 @@
     "node-notifier": "^5.2.1",
     "opn": "^5.4.0",
     "simple-git": "^1.105.0",
-    "socialy": "^0.0.9",
     "ts-simple-ast": "^17.1.0",
     "tslib": "^1"
   },
@@ -91,7 +91,7 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
-    "prepack": "rm -rf lib && tsc -b && gulp copy:templates && gulp copy:images && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rm -rf lib && tsc -b && gulp copy:files && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },

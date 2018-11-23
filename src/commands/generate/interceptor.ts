@@ -6,7 +6,7 @@ import {compile} from 'handlebars'
 import {join as pathJoin} from 'path'
 import {cwd} from 'process'
 
-import Command from '../../base/command.base'
+import Command from '../../base/maker.base'
 
 export default class GenerateInterceptor extends Command {
   static description = 'Generate Angular Interceptor'
