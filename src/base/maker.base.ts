@@ -5,29 +5,29 @@ import * as figlet from 'figlet'
 import {mkdirSync, readFileSync, writeFileSync} from 'fs'
 import {existsSync, readJSON} from 'fs-extra'
 import {compile} from 'handlebars'
+import * as cli from 'inquirer'
 import * as notifier from 'node-notifier'
 import open = require('opn')
-// import {compile} from 'handlebars'
-// import * as notifier from 'node-notifier'
-// import open = require('opn')
 import * as path from 'path'
 import {cwd} from 'process'
+
+import {ArtifactName} from '../classes/artifact-name.class'
 
 import {MakeType} from './../enums/make-type.enum'
 import {NgemConfig} from './../models/ngem-config.model'
 import {WriteFileConfig} from './../models/write-file-config.model'
 const findRoot = require('find-root')
-
+const yn = require('yn')
 // src/base.ts
 
 export default abstract class Maker extends Command {
   public static ngemConfig: NgemConfig
   protected static CONFIG_FILENAME = 'ngem.json'
   protected static DEFAULT_CONFIG_FILENAME = 'ngem.default.json'
+  protected static DEFAULT_TEMPLATE_PATH = '../commands/make/templates'
   protected static TEMPLATE_EXTENTION = '.hbs'
 
   public root = ''
-  public artifactName = ''
   protected notifier = notifier
 
   async init() {
@@ -60,20 +60,26 @@ export default abstract class Maker extends Command {
   async getTemplate(name: MakeType): Promise<Handlebars.TemplateDelegate<any>> {
     const dir = __dirname
     const tpl = Maker.ngemConfig.angularjs.templatesDir
+    const defaultTpl = Maker.DEFAULT_TEMPLATE_PATH
     const ext = Maker.TEMPLATE_EXTENTION
-    const filename = name.toLowerCase()
+    const filename = name.toLowerCase() + ext
+    let src: string
+    let templateSource: string
+    try {
+      src = path.join(this.root, tpl , filename)
+      templateSource = readFileSync(src, 'utf8').toString()
 
-    const src: string = path.join(dir, tpl , filename , ext)
-
-    const source = readFileSync(src, 'utf8').toString()
-    const template = compile(source)
+    } catch {
+      src = path.join(dir, defaultTpl , filename)
+      templateSource = readFileSync(src, 'utf8').toString()
+    }
+    const template = compile(templateSource)
     return template
   }
 
   async makeContent(template: Handlebars.TemplateDelegate<any>, args: any, flags: any): Promise<string> {
     const content = template({
-      name: Case.camel(args.name),
-      pascalName: Case.pascal(args.name),
+      name: await this.artifactName(args.name),
       module: flags.module || Maker.ngemConfig.defaultModule || 'module'
     })
 
@@ -89,19 +95,23 @@ export default abstract class Maker extends Command {
     const filename = `.${templateType + filetype}`
     let writePath: string
     // const name = flags.name || 'world'
-    if (!config.flags.flat) {
+    if (!(config.flags.flat || config.flat)) {
       dirArr.push(filename)
-      writePath = `${CURR_DIR}/${Case.pascal(name)}/${Case.snake(name)}${filename}`
+      writePath = `${CURR_DIR}/${Case.pascal(name)}/${Case.kebab(name)}${filename}`
       try {
         mkdirSync(`${CURR_DIR}/${name}`)
       } catch (err) {
         if (err && err.code === 'EEXIST') {
-          this.warn('Directory exists')
+          this.logWarning('Directory exists')
+          const userInput = await this.confirm('Are you sure you want to overwrite existing files?')
+          if (!userInput.confirmation) {
+            this.logError('Exiting Ngem cli')
+            this.exit(1)
+          }
         }
-        // this.error(err, {code: '1', exit: 1})
       }
     } else {
-      writePath = `${CURR_DIR}/${Case.snake(name)}.${templateType + filetype}`
+      writePath = `${CURR_DIR}/${Case.kebab(name)}.${templateType + filetype}`
     }
 
     writeFileSync(writePath, config.content, 'utf8')
@@ -138,32 +148,46 @@ export default abstract class Maker extends Command {
   }
 
   async logWarning(...args: string[]): Promise<void> {
-    this.log(chalk.yellow(...args))
+    this.warn(chalk.yellow(...args))
   }
 
   async logError(...args: string[]): Promise<void> {
     this.log(chalk.red(...args))
   }
-  // async writeDir() {
-  //   const __DIRNAME = __dirname
-  //   const CURR_DIR = cwd()
-  //   this.log(chalk.blue('Component Generating...'))
-  //   const source = readFileSync(pathJoin(__DIRNAME, 'templates/component.hbs'), 'utf8').toString()
-  //   const template = compile(source)
-  //   const content = template({
-  //     name: Case.camel(args.name),
-  //     pascalName: Case.pascal(args.name),
-  //     module: flags.module || 'module'
-  //   })
-  // }
 
+  async confirm(question: string, base = false): Promise<{confirmation: string}> {
+    let questionArr = [{
+      name: 'confirmation',
+      type: 'confirm',
+      message: question,
+      default: base,
+      validate(answer: string) {
+        if (yn(answer)) {
+          return true
+        } else {
+          return 'You must enter a Yes/No value (Yy/Nn)'
+        }
+      }
+    }]
+
+    let result = await cli.prompt<{confirmation: string}>(questionArr)
+
+    return result
+  }
+
+  async artifactName(name: string): Promise<ArtifactName> {
+    let result = new ArtifactName(name)
+    return result
+  }
   async catch(err: Error) {
     // handle any error from the command
     this.error(err)
   }
   async finally(err: Error) {
     // called after run and catch regardless of whether or not the command errored
-    this.error(err)
+    if (err) {
+      this.error(err)
+    }
   }
 
 }

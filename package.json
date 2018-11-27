@@ -19,6 +19,8 @@
     "@types/figlet": "^1.2.0",
     "@types/fs-extra": "^5.0.4",
     "@types/handlebars": "^4.0.39",
+    "@types/inquirer": "^0.0.43",
+    "@types/lodash": "^4.14.118",
     "@types/node-notifier": "^0.0.28",
     "@types/opn": "^5.1.0",
     "case": "^1.5.5",
@@ -30,12 +32,15 @@
     "find-root": "^1.1.0",
     "fs-extra": "^7.0.0",
     "handlebars": "^4.0.12",
+    "inquirer": "^6.2.0",
     "is-online": "^7.0.0",
+    "lodash": "^4.17.11",
     "node-notifier": "^5.2.1",
     "opn": "^5.4.0",
     "simple-git": "^1.105.0",
     "ts-simple-ast": "^17.1.0",
-    "tslib": "^1"
+    "tslib": "^1",
+    "yn": "^2.0.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",

@@ -1,7 +1,5 @@
 import {flags} from '@oclif/command'
-import chalk from 'chalk'
 //Js style import as is-online does't have a type def
-// import {Project} from 'ts-simple-ast'
 const isOnline = require('is-online')
 import Command from '../../base/maker.base'
 
@@ -16,7 +14,10 @@ export default class IsOnline extends Command {
 
   async run() {
     const online = await isOnline()
-    this.log(chalk.green(online))
-    this.log(JSON.stringify(Command.ngemConfig))
+    if (online) {
+      this.logSuccess('You are Online! :)')
+    } else {
+      this.logError('You are Offline! :(')
+    }
   }
 }

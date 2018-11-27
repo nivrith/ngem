@@ -39,7 +39,7 @@ USAGE
 * [`ngen init [FILE]`](#ngen-init-file)
 * [`ngen is:online [FILE]`](#ngen-isonline-file)
 * [`ngen make:component [NAME]`](#ngen-makecomponent-name)
-* [`ngen make:directive [FILE]`](#ngen-makedirective-file)
+* [`ngen make:directive [NAME]`](#ngen-makedirective-name)
 * [`ngen make:filter [NAME]`](#ngen-makefilter-name)
 * [`ngen update [CHANNEL]`](#ngen-update-channel)
 
@@ -170,16 +170,14 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4
 
 ## `ngen init [FILE]`
 
-describe the command here
+Initialize ngem in your project
 
 ```
 USAGE
   $ ngen init [FILE]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help  show CLI help
 ```
 
 _See code: [src/commands/init.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/init.ts)_
@@ -220,16 +218,15 @@ ALIASES
 
 _See code: [src/commands/make/component.ts](https://github.com/Polyrithm/ngen/blob/v0.0.23/src/commands/make/component.ts)_
 
-## `ngen make:directive [FILE]`
+## `ngen make:directive [NAME]`
 
 describe the command here
 
 ```
 USAGE
-  $ ngen make:directive [FILE]
+  $ ngen make:directive [NAME]
 
 OPTIONS
-  -f, --force
   -h, --help       show CLI help
   -n, --name=name  name of the directive
 

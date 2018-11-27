@@ -2,12 +2,11 @@
     'use strict';
 
     angular
-        .module ('{{name}}')
-        .directive ('{{name}}directive', {{name}}directive);
+    .module ('{{name.camel}}')
+    .directive ('{{name.camel}}directive', {{name.camel}}directive);
 
-    {{name}}directive.$inject = ['$window'];
-
-    function {{name}}directive($window) {
+    /** @ngInject */
+    function {{name.camel}}directive() {
         // Usage:
         //     <directive></directive>
         // Creates:

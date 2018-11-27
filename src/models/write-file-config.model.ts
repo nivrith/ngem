@@ -5,6 +5,7 @@ export interface WriteFileConfig {
   content: string
   args: any
   flags: any
+  flat?: boolean
   templateType: MakeType | GenerateType
   fileType: FileType
 }

@@ -5,27 +5,19 @@ import * as path from 'path'
 
 import Command from '../base/maker.base'
 export default class Init extends Command {
-  static description = 'describe the command here'
+  static description = 'Initialize ngem in your project'
 
   static flags = {
-    help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    help: flags.help({char: 'h'})
   }
 
   static args = [{name: 'file'}]
 
   async run() {
-    const {args, flags} = this.parse(Init)
+    // const {args, flags} = this.parse(Init)
+    this.logInfo('Initialising...')
     await this.copyConfig()
     this.logSuccess('Ngem config file created in project')
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from /Users/nivrith/Desktop/polyrithm/ngen/src/commands/init.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
   }
 
   async copyConfig() {
