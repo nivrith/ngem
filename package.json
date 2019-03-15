@@ -1,12 +1,12 @@
 {
-  "name": "@polyrithm/ngen",
+  "name": "@nivrith/ngem",
   "description": "CLI Utility tool for Angular and AngularJS Development",
   "version": "0.0.23",
   "author": "Nivrith",
   "bin": {
     "ngem": "./bin/run"
   },
-  "bugs": "https://github.com/Polyrithm/ngen/issues",
+  "bugs": "https://github.com/nivrith/ngem/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -68,7 +68,7 @@
     "/oclif.manifest.json",
     "yarn.lock"
   ],
-  "homepage": "https://github.com/Polyrithm/ngen",
+  "homepage": "https://github.com/nivrith/ngem",
   "keywords": [
     "angularjs",
     "cli",
@@ -79,7 +79,7 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "ngen",
+    "bin": "ngem",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-not-found",
@@ -89,10 +89,10 @@
       "@oclif/plugin-warn-if-update-available"
     ],
     "macos": {
-      "identifier": "com.ngen.cli"
+      "identifier": "com.ngem.cli"
     }
   },
-  "repository": "Polyrithm/ngen",
+  "repository": "nivrith/ngem",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
