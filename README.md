@@ -166,7 +166,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
 
 ## `ngem init [FILE]`
 
@@ -267,5 +267,5 @@ USAGE
   $ ngem update [CHANNEL]
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.7/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.9/src/commands/update.ts)_
 <!-- commandsstop -->
