@@ -139,19 +139,19 @@ export default abstract class Maker extends Command {
     )
   }
 
-  async logSuccess(...args: string[]): Promise<void> {
+  logSuccess(...args: string[]) {
     this.log(chalk.green(...args))
   }
 
-  async logInfo(...args: string[]): Promise<void> {
+  logInfo(...args: string[]) {
     this.log(chalk.blue(...args))
   }
 
-  async logWarning(...args: string[]): Promise<void> {
+  logWarning(...args: string[]) {
     this.warn(chalk.yellow(...args))
   }
 
-  async logError(...args: string[]): Promise<void> {
+  logError(...args: string[]) {
     this.log(chalk.red(...args))
   }
 

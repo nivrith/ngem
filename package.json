@@ -98,7 +98,9 @@
     "posttest": "tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc -b && gulp copy:files && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md"
+    "test:only" : "nyc --extension .ts mocha \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md",
+    "ngem": "./bin/run "
   },
   "types": "lib/index.d.ts"
 }
