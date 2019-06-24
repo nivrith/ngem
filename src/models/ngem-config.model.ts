@@ -5,6 +5,7 @@ export interface NgemConfig {
   flat: boolean,
   angularjs: {
     templatesDir: string,
+    target: string
   }
   angular: {
     templatesDir: string,

@@ -4,7 +4,7 @@
   "defaultModule": "app",
   "flat": false,
   "angularjs": {
-
+    "target": "es6"
   },
   "angular": {
 

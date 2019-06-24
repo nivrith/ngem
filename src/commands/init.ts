@@ -1,6 +1,5 @@
 import {flags} from '@oclif/command'
 import {copyFileSync} from 'fs'
-
 import * as path from 'path'
 
 import Command from '../base/maker.base'

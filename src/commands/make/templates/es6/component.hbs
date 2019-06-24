@@ -1,0 +1,21 @@
+
+class {{name.pascal}}Controller {
+    /** @ngInject */
+    constructor(){
+
+    }
+
+    $onInit() {
+
+    }
+
+    $onDestroy() {
+
+    }
+}
+export default {
+    template: require('./{{name.kebab}}.component.html'),
+    controller: {{name.pascal}}Controller,
+    controllerAs: 'vm',
+    bindings: {}
+};

@@ -20,7 +20,7 @@ $ npm install -g @nivrith/ngem
 $ ngem COMMAND
 running command...
 $ ngem (-v|--version|version)
-@nivrith/ngem/0.0.23 darwin-x64 node-v10.13.0
+@nivrith/ngem/0.0.23 darwin-x64 node-v8.12.0
 $ ngem --help [COMMAND]
 USAGE
   $ ngem COMMAND
@@ -30,7 +30,6 @@ USAGE
 # Commands
 <!-- commands -->
 * [`ngem autocomplete [SHELL]`](#ngem-autocomplete-shell)
-* [`ngem bombard [FILE]`](#ngem-bombard-file)
 * [`ngem commands`](#ngem-commands)
 * [`ngem generate:component [NAME]`](#ngem-generatecomponent-name)
 * [`ngem generate:interceptor [NAME]`](#ngem-generateinterceptor-name)
@@ -41,6 +40,7 @@ USAGE
 * [`ngem make:component [NAME]`](#ngem-makecomponent-name)
 * [`ngem make:directive [NAME]`](#ngem-makedirective-name)
 * [`ngem make:filter [NAME]`](#ngem-makefilter-name)
+* [`ngem make:service [NAME]`](#ngem-makeservice-name)
 * [`ngem update [CHANNEL]`](#ngem-update-channel)
 
 ## `ngem autocomplete [SHELL]`
@@ -65,22 +65,6 @@ EXAMPLES
 ```
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
-
-## `ngem bombard [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ ngem bombard [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-```
-
-_See code: [src/commands/bombard.ts](https://github.com/nivrith/ngem/blob/v0.0.23/src/commands/bombard.ts)_
 
 ## `ngem commands`
 
@@ -257,6 +241,25 @@ ALIASES
 ```
 
 _See code: [src/commands/make/filter.ts](https://github.com/nivrith/ngem/blob/v0.0.23/src/commands/make/filter.ts)_
+
+## `ngem make:service [NAME]`
+
+describe the command here
+
+```
+USAGE
+  $ ngem make:service [NAME]
+
+OPTIONS
+  -h, --help       show CLI help
+  -n, --name=name  name of the service
+
+ALIASES
+  $ ngem md
+  $ ngem m:s
+```
+
+_See code: [src/commands/make/service.ts](https://github.com/nivrith/ngem/blob/v0.0.23/src/commands/make/service.ts)_
 
 ## `ngem update [CHANNEL]`
 
