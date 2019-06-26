@@ -2,20 +2,20 @@
   'use strict';
 
 
-  var {{name}}Component = {
+  var {{name.camel}}Component = {
     bindings: {},
-    controller: {{pascalName}}Controller,
+    controller: {{name.pascal}}Controller,
     controllerAs: 'vm',
     templateUrl: '',
   };
 
 
   angular.module ('{{module}}')
-  .component ('{{name}}', {{name}}Component);
+  .component ('{{name.camel}}', {{name.camel}}Component);
 
 
   /** @ngInject */
-  function {{pascalName}}Controller(){
+  function {{name.pascal}}Controller(){
     var vm = this;
 
     return vm;

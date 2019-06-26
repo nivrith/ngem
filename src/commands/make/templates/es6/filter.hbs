@@ -1,0 +1,18 @@
+(function(){
+    'use strict';
+
+    angular
+    .module('{{module}}')
+    .filter('{{name}}', {{name}}Filter);
+
+    /** @ngInject */
+    function {{name}}Filter () {
+        var filter = function(input){
+
+            return input
+        };
+
+        return filter;
+    }
+
+}());

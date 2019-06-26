@@ -24,7 +24,7 @@ export default class GenerateResolver extends Command {
 
     this.log(
       chalk.red(
-        figlet.textSync('Ngen', {horizontalLayout: 'full'})
+        figlet.textSync('Ngem', {horizontalLayout: 'full'})
       )
     )
     const __DIRNAME = __dirname
